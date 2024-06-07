@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Boutique de Jeux Vidéo</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="container">
+                <h1>Ma Boutique de Jeux Vidéo</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Jeux</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="hero">
+            <div class="container">
+                <!-- Carousel -->
+                <div class="carousel">
+                    <div class="carousel-items">
+                        <!-- Ajouter les jeux du carousel ici -->
+                        <div class="carousel-item">
+                            <img src="../Couverture Jeux/gta5.jpg" alt="Jeu 1">
+                            <div class="carousel-caption">Nom du Jeu 1</div>
+                        </div>
+                        <!-- Ajouter d'autres jeux de la même manière -->
+                    </div>
+                    <!-- Ajouter les boutons de navigation ici si nécessaire -->
+                </div>
+            </div>
+        </section>
+        
+        <section class="catalog">
+            <div class="container">
+                <h2>Catalogue de Jeux Vidéo</h2>
+                <div class="filters">
+                    <div class="search-container">
+                        <input type="text" id="search" placeholder="Rechercher...">
+                        <button type="submit" class="search-icon"><img src="../img/rechercher.png" alt="Rechercher"></button>
+                    </div>
+                    <div class="filter-options">
+                        <label for="platform">Plateforme :</label>
+                        <select id="platform">
+                            <option value="">Toutes</option>
+                            <option value="PC">PC</option>
+                            <option value="PS4">PS4</option>
+                            <option value="Xbox">Xbox</option>
+                        </select>
+                        <label for="genre">Genre :</label>
+                        <select id="genre">
+                            <option value="">Tous</option>
+                            <option value="Action">Action</option>
+                            <option value="Aventure">Aventure</option>
+                            <option value="FPS">FPS</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="games">
+                    <a href="jeu1.html" class="game" data-system="PC" data-platform="Steam" data-genre="Action" data-price="10.99">
+                        <div class="video-container">
+                            <video class="game-video" loop muted>
+                                <source src="../Annonce Jeux/gta5.mp4" type="video/mp4">
+                                Votre navigateur ne prend pas en charge la vidéo.
+                            </video>
+                            <img src="../Couverture Jeux/gta5.jpg" alt="Grand Theft Auto 5" class="game-img">
+                        </div>
+                        <div class="details">
+                            <h3>Grand Theft Auto 5</h3>
+                            <span class="price">10.99€</span>
+                        </div>
+                    </a>
+                    <!-- Ajouter d'autres jeux ici -->
+                    <a href="jeu2.html" class="game" data-system="PS4" data-platform="PSN" data-genre="Aventure" data-price="39.99">
+                        <div class="video-container">
+                            <video class="game-video" loop muted>
+                                <source src="bande_annonce_jeu2.mp4" type="video/mp4">
+                                Votre navigateur ne prend pas en charge la vidéo.
+                            </video>
+                            <img src="game2.jpg" alt="Nom du Jeu 2" class="game-img">
+                        </div>
+                        <div class="details">
+                            <h3>Nom du Jeu 2</h3>
+                            <span class="price">39.99€</span>
+                        </div>
+                    </a>
+                    <a href="jeu3.html" class="game" data-system="Xbox" data-platform="Microsoft Store" data-genre="FPS" data-price="49.99">
+                        <div class="video-container">
+                            <video class="game-video" loop muted>
+                                <source src="bande_annonce_jeu3.mp4" type="video/mp4">
+                                Votre navigateur ne prend pas en charge la vidéo.
+                            </video>
+                            <img src="game3.jpg" alt="Nom du Jeu 3" class="game-img">
+                        </div>
+                        <div class="details">
+                            <h3>Nom du Jeu 3</h3>
+                            <span class="price">49.99€</span>
+                        </div>
+                    </a>
+                    <!-- Ajouter d'autres jeux ici -->
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Ma Boutique de Jeux Vidéo. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

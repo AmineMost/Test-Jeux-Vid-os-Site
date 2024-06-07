@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier</title>
+    <link rel="stylesheet" href="./panier.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="container">
+                <h1>Panier</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Panier</a></li> <!-- Nouvelle page de panier -->
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="cart">
+            <div class="container">
+                <h2>Panier d'Achat</h2>
+                <div class="cart-items">
+                    <!-- Contenu du panier sera ajouté dynamiquement ici -->
+                </div>
+                <div class="cart-total">
+                    <h3>Total : <span id="total">0.00€</span></h3>
+                    <button class="btn checkout-btn">Finaliser l'Achat</button>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Ma Boutique de Jeux Vidéo. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="./panier.js"></script>
+</body>
+</html>
