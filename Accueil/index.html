@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Achetez les meilleures clés de jeux vidéo à des prix imbattables. Découvrez notre large sélection de jeux pour toutes les plateformes.">
+    <meta name="keywords" content="jeux vidéo, clés de jeux, achat jeux vidéo, PC, PS4, Xbox, Steam, PSN, Microsoft Store">
     <title>Ma Boutique de Jeux Vidéo</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -14,10 +16,10 @@
                 <h1>Ma Boutique de Jeux Vidéo</h1>
                 <nav>
                     <ul>
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Jeux</a></li>
-                        <li><a href="#">À propos</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" title="Accueil">Accueil</a></li>
+                        <li><a href="#" title="Jeux">Jeux</a></li>
+                        <li><a href="#" title="À propos">À propos</a></li>
+                        <li><a href="#" title="Contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -51,15 +53,14 @@
                                 <p>49.99€</p>
                             </div>
                         </div>
-                        <!-- Ajouter plus de jeux ici -->
                     </div>
                     <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
                     <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
                 </div>
             </div>
         </section>
-        
-        <section class="catalog">
+
+        <section class="catalog" id="catalog">
             <div class="container">
                 <div class="filter-options">
                     <div class="filter-item">
@@ -146,7 +147,58 @@
                             <span class="price">49.99€</span>
                         </div>
                     </a>
-                    <!-- Ajouter d'autres jeux ici -->
+                </div>
+            </div>
+        </section>
+
+        <section class="search-results" id="search-results">
+            <div class="container">
+                <div class="filter-options">
+                    <div class="filter-item">
+                        <label for="system">Systèmes :</label>
+                        <select id="system-filter">
+                            <option value="">Tous</option>
+                            <option value="PC">PC</option>
+                            <option value="PS4">PS4</option>
+                            <option value="Xbox">Xbox</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="platform">Plateformes :</label>
+                        <select id="platform-filter">
+                            <option value="">Toutes</option>
+                            <option value="Steam">Steam</option>
+                            <option value="PSN">PSN</option>
+                            <option value="Microsoft Store">Microsoft Store</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="genre">Genres :</label>
+                        <select id="genre-filter">
+                            <option value="">Tous</option>
+                            <option value="Action">Action</option>
+                            <option value="Aventure">Aventure</option>
+                            <option value="FPS">FPS</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="price">Prix :</label>
+                        <div class="price-range">
+                            <input type="number" id="min-price-filter" placeholder="Min" min="0">
+                            <span>à</span>
+                            <input type="number" id="max-price-filter" placeholder="Max" min="0">
+                        </div>
+                    </div>
+                    <div class="filter-item">
+                        <label for="stock">En stock :</label>
+                        <select id="stock-filter">
+                            <option value="">Tous</option>
+                            <option value="En stock">En stock</option>
+                            <option value="Hors stock">Hors stock</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="games" id="search-games-list">
                 </div>
             </div>
         </section>

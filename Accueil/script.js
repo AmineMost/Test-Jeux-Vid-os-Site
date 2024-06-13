@@ -1,38 +1,32 @@
-let currentSlide = 0;
-
-function showSlide(index) {
-    const slides = document.querySelectorAll('.carousel-item');
-    slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${(i - index) * 100}%)`;
-    });
-}
-
-function nextSlide() {
-    const slides = document.querySelectorAll('.carousel-item');
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-
-function prevSlide() {
-    const slides = document.querySelectorAll('.carousel-item');
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    showSlide(currentSlide);
+    let currentSlide = 0;
 
-    // Fonction pour activer la lecture de la vidéo au survol
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.carousel-item');
+        slides.forEach((slide, i) => {
+            slide.style.transform = `translateX(${(i - index) * 100}%)`;
+        });
+    }
+
+    function nextSlide() {
+        const slides = document.querySelectorAll('.carousel-item');
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        const slides = document.querySelectorAll('.carousel-item');
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
     function playVideoOnHover() {
         const games = document.querySelectorAll('.game');
-
         games.forEach(game => {
             const video = game.querySelector('.game-video');
-
             game.addEventListener('mouseenter', () => {
                 video.play();
             });
-
             game.addEventListener('mouseleave', () => {
                 video.pause();
                 video.currentTime = 0;
@@ -40,24 +34,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fonction pour filtrer les jeux en fonction de la recherche
     function filterGames() {
         const searchInput = document.getElementById('search').value.toLowerCase();
         const games = document.querySelectorAll('.game');
-
         games.forEach(game => {
             const title = game.querySelector('.details h3').textContent.toLowerCase();
-            if (title.includes(searchInput)) {
-                game.style.display = '';
-            } else {
-                game.style.display = 'none';
-            }
+            game.style.display = title.includes(searchInput) ? '' : 'none';
         });
     }
 
-    // Événement pour la recherche en temps réel
+    function toggleSearchResults(active) {
+        const catalogSection = document.getElementById('catalog');
+        const searchResultsSection = document.getElementById('search-results');
+        
+        if (active) {
+            catalogSection.classList.add('hidden');
+            searchResultsSection.classList.add('active');
+        } else {
+            catalogSection.classList.remove('hidden');
+            searchResultsSection.classList.remove('active');
+        }
+    }
+
+    document.getElementById('search').addEventListener('focus', () => {
+        toggleSearchResults(true);
+    });
+
+    document.getElementById('search').addEventListener('blur', () => {
+        setTimeout(() => {
+            toggleSearchResults(false);
+        }, 300);
+    });
+
     document.getElementById('search').addEventListener('input', filterGames);
 
-    // Appel de la fonction pour activer la lecture de la vidéo au survol
+    showSlide(currentSlide);
     playVideoOnHover();
 });
